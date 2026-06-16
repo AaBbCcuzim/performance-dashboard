@@ -5,6 +5,7 @@ import prettier from 'eslint-config-prettier';
 import globals from 'globals';
 
 export default [
+  { ignores: ['src/routes/**', 'src/routeTree.gen.ts'] },
   js.configs.recommended,
   {
     files: ['src/**/*.{ts,tsx}'],

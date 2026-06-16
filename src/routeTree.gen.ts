@@ -9,27 +9,87 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as CompareRouteImport } from './routes/compare'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as MetricIdRouteImport } from './routes/metric.$id'
 
-export interface FileRoutesByFullPath {}
-export interface FileRoutesByTo {}
+const CompareRoute = CompareRouteImport.update({
+  id: '/compare',
+  path: '/compare',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MetricIdRoute = MetricIdRouteImport.update({
+  id: '/metric/$id',
+  path: '/metric/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+export interface FileRoutesByFullPath {
+  '/': typeof IndexRoute
+  '/compare': typeof CompareRoute
+  '/metric/$id': typeof MetricIdRoute
+}
+export interface FileRoutesByTo {
+  '/': typeof IndexRoute
+  '/compare': typeof CompareRoute
+  '/metric/$id': typeof MetricIdRoute
+}
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
+  '/compare': typeof CompareRoute
+  '/metric/$id': typeof MetricIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: never
+  fullPaths: '/' | '/compare' | '/metric/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: never
-  id: '__root__'
+  to: '/' | '/compare' | '/metric/$id'
+  id: '__root__' | '/' | '/compare' | '/metric/$id'
   fileRoutesById: FileRoutesById
 }
-export interface RootRouteChildren {}
-
-declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {}
+export interface RootRouteChildren {
+  IndexRoute: typeof IndexRoute
+  CompareRoute: typeof CompareRoute
+  MetricIdRoute: typeof MetricIdRoute
 }
 
-const rootRouteChildren: RootRouteChildren = {}
+declare module '@tanstack/react-router' {
+  interface FileRoutesByPath {
+    '/compare': {
+      id: '/compare'
+      path: '/compare'
+      fullPath: '/compare'
+      preLoaderRoute: typeof CompareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/metric/$id': {
+      id: '/metric/$id'
+      path: '/metric/$id'
+      fullPath: '/metric/$id'
+      preLoaderRoute: typeof MetricIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+  }
+}
+
+const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
+  CompareRoute: CompareRoute,
+  MetricIdRoute: MetricIdRoute,
+}
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
