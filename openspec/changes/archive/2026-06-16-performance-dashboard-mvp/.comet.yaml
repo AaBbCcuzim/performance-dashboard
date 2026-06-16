@@ -1,5 +1,5 @@
 workflow: full
-phase: verify
+phase: archive
 context_compression: off
 build_mode: executing-plans
 build_pause: null
@@ -11,11 +11,11 @@ auto_transition: true
 base_ref: null
 design_doc: docs/superpowers/specs/2026-06-16-performance-dashboard-mvp-design.md
 plan: docs/superpowers/plans/2026-06-16-performance-dashboard-mvp.md
-verify_result: pending
-verification_report: null
-branch_status: pending
+verify_result: pass
+verification_report: docs/superpowers/reports/2026-06-16-performance-dashboard-mvp-verify.md
+branch_status: handled
 created_at: 2026-06-16
-verified_at: null
-archived: false
+verified_at: 2026-06-16
+archived: true
 handoff_context: openspec/changes/performance-dashboard-mvp/.comet/handoff/design-context.json
 handoff_hash: 3cb495c0a4799c96b5f01f94c4f3e2d051c178f5dfeeb3cdce165f5559625e69

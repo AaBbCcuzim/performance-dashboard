@@ -2,6 +2,7 @@
 change: performance-dashboard-mvp
 design-doc: docs/superpowers/specs/2026-06-16-performance-dashboard-mvp-design.md
 base-ref: 1f45aeb
+archived-with: 2026-06-16-performance-dashboard-mvp
 ---
 
 # Performance Dashboard MVP Implementation Plan
@@ -14,6 +15,7 @@ base-ref: 1f45aeb
 
 **Tech Stack:** React 18, TypeScript, Vite, TanStack Router 1.170, TanStack Query 5.60, ECharts, Zod 3.23, Zustand, Tailwind CSS, shadcn/ui, Vitest, Playwright
 
+archived-with: 2026-06-16-performance-dashboard-mvp
 ---
 
 ### Task 1: Project Scaffolding
@@ -207,6 +209,7 @@ git add -A
 git commit -m "feat: scaffold Vite + React + TS project with Tailwind, ESLint, Prettier, Vitest, Playwright, shadcn/ui"
 ```
 
+archived-with: 2026-06-16-performance-dashboard-mvp
 ---
 
 ### Task 2: Types and Zod Schemas
@@ -391,6 +394,7 @@ git add -A
 git commit -m "feat: add Zod schemas, TypeScript types, and constants"
 ```
 
+archived-with: 2026-06-16-performance-dashboard-mvp
 ---
 
 ### Task 3: RingBuffer
@@ -536,6 +540,7 @@ git add -A
 git commit -m "feat: implement RingBuffer with O(1) push and overflow behavior"
 ```
 
+archived-with: 2026-06-16-performance-dashboard-mvp
 ---
 
 ### Task 4: Mock Data Generator
@@ -733,6 +738,7 @@ git add -A
 git commit -m "feat: implement seeded MockGenerator with Zod validation"
 ```
 
+archived-with: 2026-06-16-performance-dashboard-mvp
 ---
 
 ### Task 5: LTTB Downsampling
@@ -880,6 +886,7 @@ git add -A
 git commit -m "feat: implement LTTB downsampling algorithm"
 ```
 
+archived-with: 2026-06-16-performance-dashboard-mvp
 ---
 
 ### Task 6: Zustand UI Store
@@ -1002,6 +1009,7 @@ git add -A
 git commit -m "feat: implement Zustand UI store for time range, polling, and compare dimensions"
 ```
 
+archived-with: 2026-06-16-performance-dashboard-mvp
 ---
 
 ### Task 7: Viewport Hook + Downsampled Data Hook
@@ -1141,6 +1149,7 @@ git add -A
 git commit -m "feat: implement useViewportWidth and useDownsampledData hooks"
 ```
 
+archived-with: 2026-06-16-performance-dashboard-mvp
 ---
 
 ### Task 8: useMetrics Hook (TanStack Query)
@@ -1327,6 +1336,7 @@ git add -A
 git commit -m "feat: implement useMetrics TanStack Query hook with polling and RingBuffer integration"
 ```
 
+archived-with: 2026-06-16-performance-dashboard-mvp
 ---
 
 ### Task 9: TimeRangeSelector + PollingController
@@ -1469,6 +1479,7 @@ git add -A
 git commit -m "feat: implement TimeRangeSelector and PollingController controls"
 ```
 
+archived-with: 2026-06-16-performance-dashboard-mvp
 ---
 
 ### Task 10: Root Layout + Dashboard Page
@@ -1704,6 +1715,7 @@ git add -A
 git commit -m "feat: implement root layout, MetricCard, MetricCardGrid, DataStatusBar, and dashboard page"
 ```
 
+archived-with: 2026-06-16-performance-dashboard-mvp
 ---
 
 ### Task 11: TimeSeriesChart ECharts Component
@@ -1809,6 +1821,7 @@ git add -A
 git commit -m "feat: implement TimeSeriesChart with ECharts Canvas large mode and LTTB sampling"
 ```
 
+archived-with: 2026-06-16-performance-dashboard-mvp
 ---
 
 ### Task 12: Comparison View
@@ -1931,6 +1944,7 @@ git add -A
 git commit -m "feat: implement comparison view with 4 synced chart panels"
 ```
 
+archived-with: 2026-06-16-performance-dashboard-mvp
 ---
 
 ### Task 13: Metric Detail Page
@@ -1985,6 +1999,7 @@ git add -A
 git commit -m "feat: implement metric detail page with dynamic route"
 ```
 
+archived-with: 2026-06-16-performance-dashboard-mvp
 ---
 
 ### Task 14: E2E Tests (Playwright)
@@ -2090,6 +2105,7 @@ git add -A
 git commit -m "test: add Playwright E2E tests for dashboard, navigation, and polling"
 ```
 
+archived-with: 2026-06-16-performance-dashboard-mvp
 ---
 
 ## Self-Review

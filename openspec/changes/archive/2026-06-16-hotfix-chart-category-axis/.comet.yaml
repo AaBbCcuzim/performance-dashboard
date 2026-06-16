@@ -1,5 +1,5 @@
 workflow: hotfix
-phase: build
+phase: archive
 context_compression: off
 build_mode: direct
 build_pause: null
@@ -11,9 +11,9 @@ auto_transition: true
 base_ref: 4ddb4b50c86f290d7b3c1086ba3adfadacff9a1f
 design_doc: null
 plan: null
-verify_result: pending
-verification_report: null
-branch_status: pending
+verify_result: pass
+verification_report: docs/superpowers/reports/2026-06-16-hotfix-chart-category-axis-verify.md
+branch_status: handled
 created_at: 2026-06-16
-verified_at: null
-archived: false
+verified_at: 2026-06-16
+archived: true

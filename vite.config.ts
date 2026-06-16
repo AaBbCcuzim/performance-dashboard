@@ -5,6 +5,7 @@ import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
 import path from 'node:path';
 
 export default defineConfig({
+  base: '/performance-dashboard/',
   plugins: [
     TanStackRouterVite({ target: 'react', autoCodeSplitting: true }),
     react(),

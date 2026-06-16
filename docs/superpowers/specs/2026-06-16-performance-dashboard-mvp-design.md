@@ -2,6 +2,8 @@
 comet_change: performance-dashboard-mvp
 role: technical-design
 canonical_spec: openspec
+archived-with: 2026-06-16-performance-dashboard-mvp
+status: final
 ---
 
 # Performance Dashboard MVP — Technical Design

@@ -1,5 +1,5 @@
-workflow: hotfix
-phase: verify
+workflow: tweak
+phase: build
 context_compression: off
 build_mode: direct
 build_pause: null
@@ -8,12 +8,12 @@ tdd_mode: direct
 isolation: branch
 verify_mode: light
 auto_transition: true
-base_ref: 4b510eca806dfa38a340d0bd23f3fec03d0c1a8e
+base_ref: 41f19a60a491c77125b91b456ad38a7e13fcd858
 design_doc: null
 plan: null
 verify_result: pending
-verification_report: docs/superpowers/reports/2026-06-16-hotfix-chart-nan-axis-verify.md
-branch_status: handled
+verification_report: null
+branch_status: pending
 created_at: 2026-06-16
 verified_at: null
 archived: false
