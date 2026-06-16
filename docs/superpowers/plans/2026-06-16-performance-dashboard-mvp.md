@@ -6,7 +6,7 @@ base-ref: 1f45aeb
 
 # Performance Dashboard MVP Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Build a single-page performance monitoring dashboard supporting million-point time-series rendering, real-time polling, multi-dimensional comparison.
 
@@ -23,7 +23,7 @@ base-ref: 1f45aeb
 - Create: `.eslintrc.cjs`, `.prettierrc`, `vitest.config.ts`, `playwright.config.ts`
 - Create: `src/routeTree.gen.ts` (placeholder), `src/routes/__root.tsx` (placeholder)
 
-- [ ] **Step 1: Initialize Vite + React + TypeScript project**
+- [x] **Step 1: Initialize Vite + React + TypeScript project**
 
 ```bash
 npm create vite@latest . -- --template react-ts 2>&1
@@ -35,14 +35,14 @@ Accept the prompt to scaffold into the existing directory. Then install base dep
 npm install
 ```
 
-- [ ] **Step 2: Install all dependencies**
+- [x] **Step 2: Install all dependencies**
 
 ```bash
 npm install @tanstack/react-router@1.170 @tanstack/react-query@5.60 echarts zod zustand
 npm install -D @tanstack/router-plugin @tanstack/router-devtools @types/node tailwindcss @tailwindcss/vite postcss autoprefixer eslint prettier eslint-config-prettier @typescript-eslint/parser @typescript-eslint/eslint-plugin vitest @testing-library/react @testing-library/jest-dom @testing-library/user-event jsdom @playwright/test
 ```
 
-- [ ] **Step 3: Install shadcn/ui**
+- [x] **Step 3: Install shadcn/ui**
 
 ```bash
 npx shadcn@latest init -d --force 2>&1
@@ -52,7 +52,7 @@ npx shadcn@latest init -d --force 2>&1
 npx shadcn@latest add button select card 2>&1
 ```
 
-- [ ] **Step 4: Configure Vite** — Write `vite.config.ts`:
+- [x] **Step 4: Configure Vite** — Write `vite.config.ts`:
 
 ```typescript
 import { defineConfig } from 'vite';
@@ -98,20 +98,20 @@ export default defineConfig({
 });
 ```
 
-- [ ] **Step 5: Configure Tailwind CSS** — Ensure `src/index.css`:
+- [x] **Step 5: Configure Tailwind CSS** — Ensure `src/index.css`:
 
 ```css
 @import "tailwindcss";
 ```
 
-- [ ] **Step 6: Configure tsconfig.json path aliases** — Add to `compilerOptions`:
+- [x] **Step 6: Configure tsconfig.json path aliases** — Add to `compilerOptions`:
 
 ```json
 "baseUrl": ".",
 "paths": { "@/*": ["./src/*"] }
 ```
 
-- [ ] **Step 7: Configure ESLint** — `.eslintrc.cjs`:
+- [x] **Step 7: Configure ESLint** — `.eslintrc.cjs`:
 
 ```javascript
 module.exports = {
@@ -127,7 +127,7 @@ module.exports = {
 };
 ```
 
-- [ ] **Step 8: Configure Prettier** — `.prettierrc`:
+- [x] **Step 8: Configure Prettier** — `.prettierrc`:
 
 ```json
 {
@@ -138,13 +138,13 @@ module.exports = {
 }
 ```
 
-- [ ] **Step 9: Create test setup** — `src/test/setup.ts`:
+- [x] **Step 9: Create test setup** — `src/test/setup.ts`:
 
 ```typescript
 import '@testing-library/jest-dom';
 ```
 
-- [ ] **Step 10: Create placeholder route files** — `src/routes/__root.tsx`:
+- [x] **Step 10: Create placeholder route files** — `src/routes/__root.tsx`:
 
 ```typescript
 import { Outlet, createRootRoute } from '@tanstack/react-router';
@@ -183,7 +183,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 );
 ```
 
-- [ ] **Step 11: Verify** — Run lint and build:
+- [x] **Step 11: Verify** — Run lint and build:
 
 ```bash
 npx eslint src/ --ext .ts,.tsx 2>&1
@@ -200,7 +200,7 @@ npm run dev 2>&1
 ```
 Expected: dev server starts on localhost.
 
-- [ ] **Step 12: Commit**
+- [x] **Step 12: Commit**
 
 ```bash
 git add -A
@@ -217,7 +217,7 @@ git commit -m "feat: scaffold Vite + React + TS project with Tailwind, ESLint, P
 - Create: `src/lib/constants.ts`
 - Test: `src/lib/__tests__/schema.test.ts`
 
-- [ ] **Step 1: Write failing tests for schema** — `src/lib/__tests__/schema.test.ts`:
+- [x] **Step 1: Write failing tests for schema** — `src/lib/__tests__/schema.test.ts`:
 
 ```typescript
 import { describe, it, expect } from 'vitest';
@@ -290,14 +290,14 @@ describe('MetricCategorySchema', () => {
 });
 ```
 
-- [ ] **Step 2: Run tests to verify failure**
+- [x] **Step 2: Run tests to verify failure**
 
 ```bash
 npx vitest run src/lib/__tests__/schema.test.ts 2>&1
 ```
 Expected: FAIL — module not found.
 
-- [ ] **Step 3: Implement schema** — `src/lib/schema.ts`:
+- [x] **Step 3: Implement schema** — `src/lib/schema.ts`:
 
 ```typescript
 import { z } from 'zod';
@@ -333,14 +333,14 @@ export type MetricCategory = z.infer<typeof MetricCategorySchema>;
 export type MetricBatch = z.infer<typeof MetricBatchSchema>;
 ```
 
-- [ ] **Step 4: Run tests to verify pass**
+- [x] **Step 4: Run tests to verify pass**
 
 ```bash
 npx vitest run src/lib/__tests__/schema.test.ts 2>&1
 ```
 Expected: PASS (2 describe blocks, all tests pass).
 
-- [ ] **Step 5: Create constants** — `src/lib/constants.ts`:
+- [x] **Step 5: Create constants** — `src/lib/constants.ts`:
 
 ```typescript
 import type { MetricCategory } from './schema';
@@ -378,13 +378,13 @@ export const DOWNSAMPLE_RESOLUTIONS = [
 ] as const;
 ```
 
-- [ ] **Step 6: Create types barrel** — `src/types/metrics.ts`:
+- [x] **Step 6: Create types barrel** — `src/types/metrics.ts`:
 
 ```typescript
 export type { DataPoint, MetricCategory, MetricBatch } from '@/lib/schema';
 ```
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add -A
@@ -399,7 +399,7 @@ git commit -m "feat: add Zod schemas, TypeScript types, and constants"
 - Create: `src/lib/ring-buffer.ts`
 - Test: `src/lib/__tests__/ring-buffer.test.ts`
 
-- [ ] **Step 1: Write failing tests** — `src/lib/__tests__/ring-buffer.test.ts`:
+- [x] **Step 1: Write failing tests** — `src/lib/__tests__/ring-buffer.test.ts`:
 
 ```typescript
 import { describe, it, expect } from 'vitest';
@@ -466,14 +466,14 @@ describe('RingBuffer', () => {
 });
 ```
 
-- [ ] **Step 2: Run tests to verify failure**
+- [x] **Step 2: Run tests to verify failure**
 
 ```bash
 npx vitest run src/lib/__tests__/ring-buffer.test.ts 2>&1
 ```
 Expected: FAIL — module not found.
 
-- [ ] **Step 3: Implement RingBuffer** — `src/lib/ring-buffer.ts`:
+- [x] **Step 3: Implement RingBuffer** — `src/lib/ring-buffer.ts`:
 
 ```typescript
 export class RingBuffer<T> {
@@ -522,14 +522,14 @@ export class RingBuffer<T> {
 }
 ```
 
-- [ ] **Step 4: Run tests to verify pass**
+- [x] **Step 4: Run tests to verify pass**
 
 ```bash
 npx vitest run src/lib/__tests__/ring-buffer.test.ts 2>&1
 ```
 Expected: PASS (all tests pass).
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add -A
@@ -544,7 +544,7 @@ git commit -m "feat: implement RingBuffer with O(1) push and overflow behavior"
 - Create: `src/lib/mock-generator.ts`
 - Test: `src/lib/__tests__/mock-generator.test.ts`
 
-- [ ] **Step 1: Write failing tests** — `src/lib/__tests__/mock-generator.test.ts`:
+- [x] **Step 1: Write failing tests** — `src/lib/__tests__/mock-generator.test.ts`:
 
 ```typescript
 import { describe, it, expect } from 'vitest';
@@ -623,14 +623,14 @@ describe('MockGenerator', () => {
 });
 ```
 
-- [ ] **Step 2: Run tests to verify failure**
+- [x] **Step 2: Run tests to verify failure**
 
 ```bash
 npx vitest run src/lib/__tests__/mock-generator.test.ts 2>&1
 ```
 Expected: FAIL — module not found.
 
-- [ ] **Step 3: Implement MockGenerator** — `src/lib/mock-generator.ts`:
+- [x] **Step 3: Implement MockGenerator** — `src/lib/mock-generator.ts`:
 
 ```typescript
 import { METRIC_CATEGORIES, HOST_IDS, METRIC_DEFS, DATA_INTERVAL_MS } from './constants';
@@ -719,14 +719,14 @@ export class MockGenerator {
 }
 ```
 
-- [ ] **Step 4: Run tests to verify pass**
+- [x] **Step 4: Run tests to verify pass**
 
 ```bash
 npx vitest run src/lib/__tests__/mock-generator.test.ts 2>&1
 ```
 Expected: PASS (all tests pass).
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add -A
@@ -741,7 +741,7 @@ git commit -m "feat: implement seeded MockGenerator with Zod validation"
 - Create: `src/lib/lttb.ts`
 - Test: `src/lib/__tests__/lttb.test.ts`
 
-- [ ] **Step 1: Write failing tests** — `src/lib/__tests__/lttb.test.ts`:
+- [x] **Step 1: Write failing tests** — `src/lib/__tests__/lttb.test.ts`:
 
 ```typescript
 import { describe, it, expect } from 'vitest';
@@ -801,14 +801,14 @@ describe('lttb', () => {
 });
 ```
 
-- [ ] **Step 2: Verify failure**
+- [x] **Step 2: Verify failure**
 
 ```bash
 npx vitest run src/lib/__tests__/lttb.test.ts 2>&1
 ```
 Expected: FAIL — module not found.
 
-- [ ] **Step 3: Implement LTTB** — `src/lib/lttb.ts`:
+- [x] **Step 3: Implement LTTB** — `src/lib/lttb.ts`:
 
 ```typescript
 import type { DataPoint } from './schema';
@@ -866,14 +866,14 @@ export function lttb(data: DataPoint[], targetCount: number): DataPoint[] {
 }
 ```
 
-- [ ] **Step 4: Run tests to verify pass**
+- [x] **Step 4: Run tests to verify pass**
 
 ```bash
 npx vitest run src/lib/__tests__/lttb.test.ts 2>&1
 ```
 Expected: PASS (all tests pass, including performance test).
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add -A
@@ -888,7 +888,7 @@ git commit -m "feat: implement LTTB downsampling algorithm"
 - Create: `src/store/ui-store.ts`
 - Test: `src/store/__tests__/ui-store.test.ts`
 
-- [ ] **Step 1: Write failing tests** — `src/store/__tests__/ui-store.test.ts`:
+- [x] **Step 1: Write failing tests** — `src/store/__tests__/ui-store.test.ts`:
 
 ```typescript
 import { describe, it, expect, beforeEach } from 'vitest';
@@ -945,14 +945,14 @@ describe('useUIStore', () => {
 });
 ```
 
-- [ ] **Step 2: Verify failure**
+- [x] **Step 2: Verify failure**
 
 ```bash
 npx vitest run src/store/__tests__/ui-store.test.ts 2>&1
 ```
 Expected: FAIL.
 
-- [ ] **Step 3: Implement Zustand store** — `src/store/ui-store.ts`:
+- [x] **Step 3: Implement Zustand store** — `src/store/ui-store.ts`:
 
 ```typescript
 import { create } from 'zustand';
@@ -988,14 +988,14 @@ export const useUIStore = create<UIState>((set) => ({
 }));
 ```
 
-- [ ] **Step 4: Run tests to verify pass**
+- [x] **Step 4: Run tests to verify pass**
 
 ```bash
 npx vitest run src/store/__tests__/ui-store.test.ts 2>&1
 ```
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add -A
@@ -1011,7 +1011,7 @@ git commit -m "feat: implement Zustand UI store for time range, polling, and com
 - Create: `src/hooks/useDownsampledData.ts`
 - Test: `src/hooks/__tests__/useDownsampledData.test.ts`
 
-- [ ] **Step 1: Write failing tests** — `src/hooks/__tests__/useDownsampledData.test.ts`:
+- [x] **Step 1: Write failing tests** — `src/hooks/__tests__/useDownsampledData.test.ts`:
 
 ```typescript
 import { describe, it, expect } from 'vitest';
@@ -1061,14 +1061,14 @@ describe('useDownsampledData', () => {
 });
 ```
 
-- [ ] **Step 2: Verify failure**
+- [x] **Step 2: Verify failure**
 
 ```bash
 npx vitest run src/hooks/__tests__/useDownsampledData.test.ts 2>&1
 ```
 Expected: FAIL.
 
-- [ ] **Step 3: Implement hooks** — `src/hooks/useViewportWidth.ts`:
+- [x] **Step 3: Implement hooks** — `src/hooks/useViewportWidth.ts`:
 
 ```typescript
 import { useState, useEffect } from 'react';
@@ -1127,14 +1127,14 @@ export function useDownsampledData(data: DataPoint[], viewportWidth: number): Da
 }
 ```
 
-- [ ] **Step 4: Run tests to verify pass**
+- [x] **Step 4: Run tests to verify pass**
 
 ```bash
 npx vitest run src/hooks/__tests__/useDownsampledData.test.ts 2>&1
 ```
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add -A
@@ -1152,7 +1152,7 @@ git commit -m "feat: implement useViewportWidth and useDownsampledData hooks"
 
 The `useMetrics` hook wraps TanStack Query. It stores RingBuffers in a module-level Map (not React state — too large). Query fetches from MockGenerator and appends to RingBuffers.
 
-- [ ] **Step 1: Create module-level metric store** — `src/lib/metric-store.ts`:
+- [x] **Step 1: Create module-level metric store** — `src/lib/metric-store.ts`:
 
 ```typescript
 import { RingBuffer } from './ring-buffer';
@@ -1196,7 +1196,7 @@ export function getTotalPointCount(): number {
 }
 ```
 
-- [ ] **Step 2: Create useMetrics hook** — `src/hooks/useMetrics.ts`:
+- [x] **Step 2: Create useMetrics hook** — `src/hooks/useMetrics.ts`:
 
 ```typescript
 import { useQuery } from '@tanstack/react-query';
@@ -1320,7 +1320,7 @@ export function useMetricData(seriesId: string) {
 }
 ```
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add -A
@@ -1337,7 +1337,7 @@ git commit -m "feat: implement useMetrics TanStack Query hook with polling and R
 - Test: `src/components/controls/__tests__/TimeRangeSelector.test.tsx`
 - Test: `src/components/controls/__tests__/PollingController.test.tsx`
 
-- [ ] **Step 1: Write failing test for TimeRangeSelector** — `src/components/controls/__tests__/TimeRangeSelector.test.tsx`:
+- [x] **Step 1: Write failing test for TimeRangeSelector** — `src/components/controls/__tests__/TimeRangeSelector.test.tsx`:
 
 ```typescript
 import { describe, it, expect, beforeEach } from 'vitest';
@@ -1368,7 +1368,7 @@ describe('TimeRangeSelector', () => {
 });
 ```
 
-- [ ] **Step 2: Write failing test for PollingController** — `src/components/controls/__tests__/PollingController.test.tsx`:
+- [x] **Step 2: Write failing test for PollingController** — `src/components/controls/__tests__/PollingController.test.tsx`:
 
 ```typescript
 import { describe, it, expect, beforeEach } from 'vitest';
@@ -1389,14 +1389,14 @@ describe('PollingController', () => {
 });
 ```
 
-- [ ] **Step 3: Verify failure**
+- [x] **Step 3: Verify failure**
 
 ```bash
 npx vitest run src/components/controls/__tests__/ 2>&1
 ```
 Expected: FAIL.
 
-- [ ] **Step 4: Implement TimeRangeSelector** — `src/components/controls/TimeRangeSelector.tsx`:
+- [x] **Step 4: Implement TimeRangeSelector** — `src/components/controls/TimeRangeSelector.tsx`:
 
 ```typescript
 import { useUIStore } from '@/store/ui-store';
@@ -1424,7 +1424,7 @@ export function TimeRangeSelector() {
 }
 ```
 
-- [ ] **Step 5: Implement PollingController** — `src/components/controls/PollingController.tsx`:
+- [x] **Step 5: Implement PollingController** — `src/components/controls/PollingController.tsx`:
 
 ```typescript
 import { useUIStore } from '@/store/ui-store';
@@ -1455,14 +1455,14 @@ export function PollingController() {
 }
 ```
 
-- [ ] **Step 6: Run tests to verify pass**
+- [x] **Step 6: Run tests to verify pass**
 
 ```bash
 npx vitest run src/components/controls/__tests__/ 2>&1
 ```
 Expected: PASS.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add -A
@@ -1480,7 +1480,7 @@ git commit -m "feat: implement TimeRangeSelector and PollingController controls"
 - Create: `src/components/dashboard/DataStatusBar.tsx`
 - Create: `src/routes/index.tsx`
 
-- [ ] **Step 1: Update root layout** — `src/routes/__root.tsx`:
+- [x] **Step 1: Update root layout** — `src/routes/__root.tsx`:
 
 ```typescript
 import { Outlet, createRootRoute, Link } from '@tanstack/react-router';
@@ -1522,7 +1522,7 @@ export const Route = createRootRoute({
 });
 ```
 
-- [ ] **Step 2: Create MetricCard** — `src/components/dashboard/MetricCard.tsx`:
+- [x] **Step 2: Create MetricCard** — `src/components/dashboard/MetricCard.tsx`:
 
 ```typescript
 import { useEffect, useRef } from 'react';
@@ -1592,7 +1592,7 @@ export function MetricCard({ name, unit, latestValue, sparklineData }: MetricCar
 }
 ```
 
-- [ ] **Step 3: Create MetricCardGrid** — `src/components/dashboard/MetricCardGrid.tsx`:
+- [x] **Step 3: Create MetricCardGrid** — `src/components/dashboard/MetricCardGrid.tsx`:
 
 ```typescript
 import { METRIC_CATEGORIES, HOST_IDS, METRIC_DEFS } from '@/lib/constants';
@@ -1639,7 +1639,7 @@ export function MetricCardGrid() {
 }
 ```
 
-- [ ] **Step 4: Create DataStatusBar** — `src/components/dashboard/DataStatusBar.tsx`:
+- [x] **Step 4: Create DataStatusBar** — `src/components/dashboard/DataStatusBar.tsx`:
 
 ```typescript
 import { getTotalPointCount } from '@/lib/metric-store';
@@ -1661,7 +1661,7 @@ export function DataStatusBar() {
 }
 ```
 
-- [ ] **Step 5: Create dashboard index route** — `src/routes/index.tsx`:
+- [x] **Step 5: Create dashboard index route** — `src/routes/index.tsx`:
 
 ```typescript
 import { createFileRoute } from '@tanstack/react-router';
@@ -1690,14 +1690,14 @@ function Dashboard() {
 }
 ```
 
-- [ ] **Step 6: Verify build**
+- [x] **Step 6: Verify build**
 
 ```bash
 npx tsc --noEmit 2>&1
 ```
 Expected: no errors (routeTree.gen.ts will be generated after dev server starts).
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add -A
@@ -1711,7 +1711,7 @@ git commit -m "feat: implement root layout, MetricCard, MetricCardGrid, DataStat
 **Files:**
 - Create: `src/components/charts/TimeSeriesChart.tsx`
 
-- [ ] **Step 1: Implement TimeSeriesChart** — `src/components/charts/TimeSeriesChart.tsx`:
+- [x] **Step 1: Implement TimeSeriesChart** — `src/components/charts/TimeSeriesChart.tsx`:
 
 ```typescript
 import { useEffect, useRef } from 'react';
@@ -1802,7 +1802,7 @@ export function TimeSeriesChart({ data, title, onChartReady }: TimeSeriesChartPr
 }
 ```
 
-- [ ] **Step 2: Commit**
+- [x] **Step 2: Commit**
 
 ```bash
 git add -A
@@ -1818,7 +1818,7 @@ git commit -m "feat: implement TimeSeriesChart with ECharts Canvas large mode an
 - Create: `src/components/charts/ComparisonView.tsx`
 - Create: `src/routes/compare.tsx`
 
-- [ ] **Step 1: Implement ChartPanel** — `src/components/charts/ChartPanel.tsx`:
+- [x] **Step 1: Implement ChartPanel** — `src/components/charts/ChartPanel.tsx`:
 
 ```typescript
 import type { ECharts } from 'echarts/core';
@@ -1875,7 +1875,7 @@ export function ChartPanel({ panelIndex, onChartReady }: ChartPanelProps) {
 }
 ```
 
-- [ ] **Step 2: Implement ComparisonView** — `src/components/charts/ComparisonView.tsx`:
+- [x] **Step 2: Implement ComparisonView** — `src/components/charts/ComparisonView.tsx`:
 
 ```typescript
 import { useRef, useCallback, useEffect } from 'react';
@@ -1908,7 +1908,7 @@ export function ComparisonView() {
 }
 ```
 
-- [ ] **Step 3: Create compare route** — `src/routes/compare.tsx`:
+- [x] **Step 3: Create compare route** — `src/routes/compare.tsx`:
 
 ```typescript
 import { createFileRoute } from '@tanstack/react-router';
@@ -1924,7 +1924,7 @@ export const Route = createFileRoute('/compare')({
 });
 ```
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add -A
@@ -1938,7 +1938,7 @@ git commit -m "feat: implement comparison view with 4 synced chart panels"
 **Files:**
 - Create: `src/routes/metric.$id.tsx`
 
-- [ ] **Step 1: Implement metric detail route** — `src/routes/metric.$id.tsx`:
+- [x] **Step 1: Implement metric detail route** — `src/routes/metric.$id.tsx`:
 
 ```typescript
 import { createFileRoute } from '@tanstack/react-router';
@@ -1978,7 +1978,7 @@ function MetricDetail() {
 }
 ```
 
-- [ ] **Step 2: Commit**
+- [x] **Step 2: Commit**
 
 ```bash
 git add -A
@@ -1993,7 +1993,7 @@ git commit -m "feat: implement metric detail page with dynamic route"
 - Create: `e2e/dashboard.spec.ts`
 - Create: `playwright.config.ts` (if not already created)
 
-- [ ] **Step 1: Create playwright config** — `playwright.config.ts`:
+- [x] **Step 1: Create playwright config** — `playwright.config.ts`:
 
 ```typescript
 import { defineConfig } from '@playwright/test';
@@ -2012,7 +2012,7 @@ export default defineConfig({
 });
 ```
 
-- [ ] **Step 2: Write E2E tests** — `e2e/dashboard.spec.ts`:
+- [x] **Step 2: Write E2E tests** — `e2e/dashboard.spec.ts`:
 
 ```typescript
 import { test, expect } from '@playwright/test';
@@ -2076,14 +2076,14 @@ test('no console errors on dashboard', async ({ page }) => {
 });
 ```
 
-- [ ] **Step 3: Run E2E tests**
+- [x] **Step 3: Run E2E tests**
 
 ```bash
 npx playwright test 2>&1
 ```
 Expected: tests pass (note: polling test may need adjustment based on polling interval).
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add -A
