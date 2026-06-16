@@ -38,20 +38,24 @@ export function TimeSeriesChart({
       onChartReady?.(instanceRef.current);
     }
 
-    const timestamps = data.map((d) => d.timestamp);
-    const values = data.map((d) => d.value);
+    const seriesData = data.map((d) => [d.timestamp, d.value] as [number, number]);
 
     instanceRef.current.setOption(
       {
-        tooltip: { trigger: 'axis' },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: { type: 'cross' },
+        },
         grid: { left: 50, right: 16, top: title ? 40 : 16, bottom: 50 },
         xAxis: {
-          type: 'category',
-          data: timestamps,
+          type: 'time',
           axisLabel: {
             formatter: (value: number) => {
               const d = new Date(value);
-              return `${d.getHours().toString().padStart(2, '0')}:${d.getMinutes().toString().padStart(2, '0')}`;
+              const h = d.getHours().toString().padStart(2, '0');
+              const m = d.getMinutes().toString().padStart(2, '0');
+              const s = d.getSeconds().toString().padStart(2, '0');
+              return `${h}:${m}:${s}`;
             },
           },
         },
@@ -63,7 +67,7 @@ export function TimeSeriesChart({
         series: [
           {
             type: 'line',
-            data: values,
+            data: seriesData,
             showSymbol: false,
             sampling: 'lttb',
             large: true,

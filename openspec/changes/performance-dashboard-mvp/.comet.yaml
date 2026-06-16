@@ -1,12 +1,12 @@
 workflow: full
-phase: build
+phase: verify
 context_compression: off
 build_mode: executing-plans
 build_pause: null
 subagent_dispatch: null
 tdd_mode: tdd
 isolation: branch
-verify_mode: null
+verify_mode: full
 auto_transition: true
 base_ref: null
 design_doc: docs/superpowers/specs/2026-06-16-performance-dashboard-mvp-design.md
