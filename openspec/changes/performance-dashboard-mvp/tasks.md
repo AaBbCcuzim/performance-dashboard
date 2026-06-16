@@ -1,3 +1,6 @@
+<!-- review skipped: subagent worktree isolation unavailable -->
+
+
 ## 1. 项目脚手架与工具链
 
 - [x] 1.1 Vite + React + TypeScript 项目初始化，配置 Tailwind CSS
