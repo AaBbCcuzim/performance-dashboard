@@ -1,0 +1,79 @@
+<h2>Dashboard Layout — 3 种方案</h2>
+<p class="subtitle">仪表盘主页：指标卡片 + 主图表 + 状态栏的排布方式</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>纵向堆叠</h3>
+      <div class="mockup">
+        <div class="mockup-header">Dashboard — 纵向</div>
+        <div class="mockup-body">
+          <div class="mock-nav" style="margin-bottom:12px">PerfDash &nbsp;|&nbsp; Dashboard &nbsp;|&nbsp; Compare</div>
+          <div style="display:flex;gap:8px;margin-bottom:12px">
+            <div class="placeholder" style="flex:1;padding:20px">CPU<br>42%</div>
+            <div class="placeholder" style="flex:1;padding:20px">Mem<br>7.2GB</div>
+            <div class="placeholder" style="flex:1;padding:20px">Net<br>1.2Gbps</div>
+            <div class="placeholder" style="flex:1;padding:20px">Disk<br>78%</div>
+          </div>
+          <div class="placeholder" style="height:340px;margin-bottom:8px">Main Chart (full width)</div>
+          <div class="placeholder" style="height:24px;font-size:12px">Status Bar — Last updated: 12:00:05 | 432,000 pts | Render: 45ms</div>
+        </div>
+      </div>
+      <p>顶部指标卡片行 → 下方全宽大图表 → 底部状态栏</p>
+    </div>
+  </div>
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>左右分栏</h3>
+      <div class="mockup">
+        <div class="mockup-header">Dashboard — 分栏</div>
+        <div class="mockup-body">
+          <div class="mock-nav" style="margin-bottom:12px">PerfDash &nbsp;|&nbsp; Dashboard &nbsp;|&nbsp; Compare</div>
+          <div style="display:flex;gap:12px">
+            <div style="width:220px">
+              <div class="placeholder" style="padding:16px;margin-bottom:8px">CPU<br><b>42%</b></div>
+              <div class="placeholder" style="padding:16px;margin-bottom:8px">Mem<br><b>7.2GB</b></div>
+              <div class="placeholder" style="padding:16px;margin-bottom:8px">Net<br><b>1.2Gbps</b></div>
+              <div class="placeholder" style="padding:16px;margin-bottom:8px">Disk<br><b>78%</b></div>
+            </div>
+            <div style="flex:1">
+              <div class="placeholder" style="height:380px;margin-bottom:8px">Main Chart</div>
+              <div class="placeholder" style="height:24px;font-size:12px">Status Bar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>左侧纵向卡片列 → 右侧大图表区域</p>
+    </div>
+  </div>
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>网格 + 点击展开</h3>
+      <div class="mockup">
+        <div class="mockup-header">Dashboard — 网格</div>
+        <div class="mockup-body">
+          <div class="mock-nav" style="margin-bottom:12px">PerfDash &nbsp;|&nbsp; Dashboard &nbsp;|&nbsp; Compare</div>
+          <div style="display:flex;gap:8px;margin-bottom:12px">
+            <div class="placeholder" style="flex:1;padding:16px">CPU<br>42%</div>
+            <div class="placeholder" style="flex:1;padding:16px">Mem<br>7.2GB</div>
+            <div class="placeholder" style="flex:1;padding:16px">Net<br>1.2Gbps</div>
+            <div class="placeholder" style="flex:1;padding:16px">Disk<br>78%</div>
+          </div>
+          <div style="display:flex;gap:12px">
+            <div style="flex:1"><div class="placeholder" style="height:170px">CPU Detail</div></div>
+            <div style="flex:1"><div class="placeholder" style="height:170px">Memory Detail</div></div>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:12px">
+            <div style="flex:1"><div class="placeholder" style="height:170px">Network Detail</div></div>
+            <div style="flex:1"><div class="placeholder" style="height:170px">Disk Detail</div></div>
+          </div>
+          <div class="placeholder" style="height:24px;font-size:12px;margin-top:8px">Status Bar</div>
+        </div>
+      </div>
+      <p>顶部卡片行 → 2x2 四宫格小图 → 点击展开全屏大图</p>
+    </div>
+  </div>
+</div>

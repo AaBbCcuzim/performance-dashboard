@@ -1,0 +1,14 @@
+{
+  "change": "performance-dashboard-mvp",
+  "phase": "design",
+  "mode": "compact",
+  "canonical_spec": "openspec",
+  "generated_by": "comet-handoff.sh",
+  "context_hash": "3cb495c0a4799c96b5f01f94c4f3e2d051c178f5dfeeb3cdce165f5559625e69",
+  "files": [
+    { "path": "openspec/changes/performance-dashboard-mvp/proposal.md", "sha256": "9a1a04554bd37ba15e14b167a0a49098753a9bc93a2500f1d873c1859e60e4b1" },
+    { "path": "openspec/changes/performance-dashboard-mvp/design.md", "sha256": "5e2d93b9f3d069b49f4659325a0f90cffcd27d076da71d60e3d0b78971b861c2" },
+    { "path": "openspec/changes/performance-dashboard-mvp/tasks.md", "sha256": "a1971157e350589e4cafe880418cdb5a64ee0e3de2f00b482a92a1da69436f39" },
+    { "path": "openspec/changes/performance-dashboard-mvp/specs/performance-dashboard/spec.md", "sha256": "591cb246f74fd66e9df84ea8db75c6ee3f6f520ae59d5046183a94a470a16c81" }
+  ]
+}
